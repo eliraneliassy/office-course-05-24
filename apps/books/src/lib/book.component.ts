@@ -1,11 +1,12 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { Book } from '@office/books';
+import { ButtonComponent } from '@office/ui';
 
 @Component({
   selector: 'lib-book',
   standalone: true,
-  imports: [],
+  imports: [ButtonComponent],
   templateUrl: './book.component.html',
   styleUrl: './book.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

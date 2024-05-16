@@ -9,6 +9,12 @@
     {{book.price}}
   </div>
 
-  <button (click)="addToCartHandler()">Add To Cart</button>
-  <button (click)="removeFromCartHandler()">Remove From Cart</button>
+<!--  <button (click)="addToCartHandler()">Add To Cart</button>-->
+<!--  <button (click)="removeFromCartHandler()">Remove From Cart</button>-->
+
+  <lib-button text="Add To Cart" (clicked)="addToCartHandler()" />
+
+
+  <lib-button text="Remove From Cart" (clicked)="removeFromCartHandler()" />
+
 }

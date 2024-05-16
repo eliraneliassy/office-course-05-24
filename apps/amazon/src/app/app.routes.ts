@@ -11,5 +11,11 @@ export const appRoutes: Route[] = [
     loadComponent: () =>
       import('@office/feed')
       .then(c => c.FeedComponent)
+  },
+  {
+    path: 'cart',
+    loadComponent: () =>
+      import('@office/cart')
+        .then(c=>c.CartComponent)
   }
 ];

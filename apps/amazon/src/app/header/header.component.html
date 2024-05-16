@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Amazin.com</h1>
+  <div class="links">
+    <ul>
+      <a routerLink="feed"><li
+      routerLinkActive="active">Feed</li>
+      </a>
+      <a routerLink="cart"><li
+          routerLinkActive="active">Cart</li>
+      </a>
+    </ul>
+  </div>
+
+  <div class="cart-info">
+    # items in cart: {{numberOfItemsInCart$ | async}}
+  </div>
+</div>
