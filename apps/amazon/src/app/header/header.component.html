@@ -1,3 +1,4 @@
+@if(viewObs$ | async; as viewObs) {
 <div class="container">
   <h1>Amazin.com</h1>
   <div class="links">
@@ -11,7 +12,14 @@
     </ul>
   </div>
 
-  <div class="cart-info">
-    # items in cart: {{numberOfItemsInCart$ | async}}
-  </div>
+  @if(viewObs.user) {
+    <div class="cart-info">
+      Welcome {{viewObs.user.email}},
+      # items in cart: {{viewObs.numberOfItemsInCart}}
+    </div>
+  } @else {
+    <a routerLink="login">Login</a>
+  }
+
 </div>
+}
