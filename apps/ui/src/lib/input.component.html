@@ -6,7 +6,7 @@
        (blur)="onTouched()"
        [disabled]="disabled">
 
-@if (input.touched && input.hasError('required')) {
+@if (controlDir.touched && controlDir.hasError('required')) {
   <small class="error">{{ errMsg }}</small>
 }
 
