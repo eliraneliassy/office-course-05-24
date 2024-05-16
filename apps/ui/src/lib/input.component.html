@@ -1,0 +1,12 @@
+<label>{{ label }}</label>
+<input [placeholder]="placeholder"
+       ngModel
+       #input="ngModel"
+       (input)="onChange($any($event.target).value)"
+       (blur)="onTouched()"
+       [disabled]="disabled">
+
+@if (input.touched && input.hasError('required')) {
+  <small class="error">{{ errMsg }}</small>
+}
+
