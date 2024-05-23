@@ -21,7 +21,13 @@
       "@office/cart": ["apps/cart/src/index.ts"],
       "@office/cart-state": ["apps/cart-state/src/index.ts"],
       "@office/feed": ["apps/feed/src/index.ts"],
-      "@office/ui": ["apps/ui/src/index.ts"]
+      "@office/ui": ["apps/ui/src/index.ts"],
+      "backoffice/Routes": [
+        "apps/backoffice/src/app/remote-entry/entry.routes.ts"
+      ],
+      "bookatable/Routes": [
+        "apps/bookatable/src/app/remote-entry/entry.routes.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

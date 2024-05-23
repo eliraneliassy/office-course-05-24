@@ -4,6 +4,6 @@
 
 <h2>My Feed: </h2>
 
-@for(book of books$ | async; track book.id){
+@for(book of books(); track book.id){
   <lib-book [book]="book" (addToCart)="addToCart($event)"></lib-book>
 }

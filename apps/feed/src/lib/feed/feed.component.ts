@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { AsyncPipe, CommonModule, NgFor } from '@angular/common';
 import { Book, BookComponent, BooksService } from '@office/books';
 import { CartService } from '@office/cart-state';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'lib-feed',
@@ -15,7 +16,7 @@ export class FeedComponent {
   booksService = inject(BooksService);
   cartService = inject(CartService);
 
-  books$ = this.booksService.getBooks('Angular');
+  books = toSignal(this.booksService.getBooks('Angular'));
 
   addToCart(book: Book) {
     this.cartService.addToCart(book);

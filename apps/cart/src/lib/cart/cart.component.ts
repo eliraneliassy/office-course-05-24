@@ -14,7 +14,8 @@ import { Book, BookComponent } from '@office/books';
 export class CartComponent {
   cartService = inject(CartService);
 
-  books$ = this.cartService.getCart();
+  // books$ = this.cartService.getCart();
+  books = this.cartService.getCart();
 
   removeFromCart(book: Book) {
     this.cartService.removeFromCart(book);

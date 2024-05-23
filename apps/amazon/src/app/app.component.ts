@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, effect, inject, signal } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 
@@ -12,5 +12,29 @@ import { HeaderComponent } from './header/header.component';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
+
+
+  counter = signal(0);
+  name = signal('Eliran');
+
+  isEven = computed(() =>
+    this.counter() % 2 === 0
+  );
+
+  constructor() {
+    effect(() => console.log('Counter Changed: ', this.counter(), this.name()));
+  }
+
+  changeNamge() {
+    this.name.set('Moshe');
+  }
+  plus(){
+
+
+
+    this.counter.set(this.counter() + 1);
+    // this.counter.update((value) => value + 1)
+  }
+
 
 }

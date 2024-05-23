@@ -23,14 +23,17 @@ export class HeaderComponent {
   numberOfItemsInCart$ =
     this.cartService.getNumberOfItemsInCart();
 
-  user$ = this.authState.getUser();
+  // user$ = this.authState.getUser();
+  user = this.authState.getUser();
 
-  viewObs$ =
-    combineLatest([this.user$, this.numberOfItemsInCart$])
-      .pipe(map(([user, numberOfItemsInCart]) => ({
-        user,
-        numberOfItemsInCart
-})));
+  numberOfItemsInCart = this.cartService.getNumberOfItemsInCart();
+
+//   viewObs$ =
+//     combineLatest([this.user$, this.numberOfItemsInCart$])
+//       .pipe(map(([user, numberOfItemsInCart]) => ({
+//         user,
+//         numberOfItemsInCart
+// })));
 
 
 }
