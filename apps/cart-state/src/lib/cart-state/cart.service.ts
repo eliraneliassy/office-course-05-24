@@ -8,7 +8,8 @@ import { BehaviorSubject, map, Observable, of } from 'rxjs';
 export class CartService {
 
   // private items$ = new BehaviorSubject<Book[]>([]);
-  private items: WritableSignal<Book[]> = signal([])
+  private items: WritableSignal<Book[]> =
+    signal([])
 
   getCart(): Signal<Book[]>{
     // return this.items$.asObservable();

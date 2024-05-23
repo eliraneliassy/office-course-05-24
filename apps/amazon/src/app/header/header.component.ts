@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { CartService } from '@office/cart-state';
+import { CartService, CartStore } from '@office/cart-state';
 import { AuthStateService } from '@office/auth-state';
 import { combineLatest, map } from 'rxjs';
 
@@ -17,16 +17,18 @@ import { combineLatest, map } from 'rxjs';
 export class HeaderComponent {
 
 
-  cartService = inject(CartService);
+  // cartService = inject(CartService);
   authState = inject(AuthStateService);
+  cartStore = inject(CartStore);
 
-  numberOfItemsInCart$ =
-    this.cartService.getNumberOfItemsInCart();
+  numberOfItemsInCart =
+    // this.cartService.getNumberOfItemsInCart();
+    this.cartStore.numberOfItemsInCart;
 
   // user$ = this.authState.getUser();
   user = this.authState.getUser();
 
-  numberOfItemsInCart = this.cartService.getNumberOfItemsInCart();
+  // numberOfItemsInCart = this.cartService.getNumberOfItemsInCart();
 
 //   viewObs$ =
 //     combineLatest([this.user$, this.numberOfItemsInCart$])

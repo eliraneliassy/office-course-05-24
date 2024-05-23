@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {CartService} from '@office/cart-state';
+import { CartService, CartStore } from '@office/cart-state';
 import { Book, BookComponent } from '@office/books';
 
 @Component({
@@ -13,11 +13,16 @@ import { Book, BookComponent } from '@office/books';
 })
 export class CartComponent {
   cartService = inject(CartService);
+  cartStore = inject(CartStore);
+
 
   // books$ = this.cartService.getCart();
-  books = this.cartService.getCart();
+  books =
+    // this.cartService.getCart();
+    this.cartStore.items;
 
   removeFromCart(book: Book) {
-    this.cartService.removeFromCart(book);
+    // this.cartService.removeFromCart(book);
+    this.cartStore.removeFromCart(book);
   }
 }
